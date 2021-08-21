@@ -302,13 +302,13 @@ sl-tab-panel {
 .news {
     overflow: hidden;
     margin: 0 auto;
-    width: 70%;
+    width: 40%;
 }
 
 .newsArticle {
     flex-shrink: 0;
     margin: 0 auto;
-    width: 33%;
+    width: 50%;
     box-sizing: border-box;
     padding: 10px;
     text-align: center;
@@ -319,7 +319,7 @@ sl-tab-panel {
 }
 
 .nmove {
-    animation: scroll 12s linear infinite;
+    animation: scroll 8s linear infinite;
 }
 
 @keyframes scroll {
@@ -470,8 +470,11 @@ footer {
     .taxContainer {
         height: 100%;
     }
+    .news {
+        width: 80%;
+    }
     .newsArticle {
-        width: 45%;
+        width: 50%;
     }
     .links {
         display: none;
@@ -523,10 +526,6 @@ footer {
     .articles p,
     .news p {
         width: 100%;
-    }
-    .news {
-        width: 100%;
-        margin: 0 auto;
     }
     sl-card {
         margin-bottom: 50px;
