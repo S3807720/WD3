@@ -1,3 +1,13 @@
+/*jshint esversion: 6 */
+
+/*
+    These errors will show when checking the validator,
+    as these are imported or used in the HTML:
+	'gsap' is not defined.
+    'ScrollTrigger' is not defined.
+    'plusSlides' is defined but never used. 
+*/
+
 //set slide index
 var slideIndex = 1;
 //https://greensock.com/forums/topic/26001-animate-all-elements-with-a-specific-class-using-scrolltrigger-with-stagger/
@@ -34,18 +44,22 @@ function staggerPlayBatch(batch) {
     gsap.to(batch, {
         stagger: {
             each: 1,
-            onStart: function() { this.targets()[0].anim.play() }
+            onStart: function() {
+                this.targets()[0].anim.play();
+            }
         }
-    })
+    });
 }
 //make thingies go away
 function staggerReverseBatch(batch) {
     gsap.to(batch, {
         stagger: {
             each: 1,
-            onStart: function() { this.targets()[0].anim.reverse() }
+            onStart: function() {
+                this.targets()[0].anim.reverse();
+            }
         }
-    })
+    });
 }
 //thingy to trigger each method
 ScrollTrigger.batch(scrollElements, {
@@ -57,7 +71,7 @@ ScrollTrigger.batch(scrollElements, {
 
 
 //method to parallax the home page
-window.addEventListener('scroll', function(e) {
+window.addEventListener('scroll', function() {
     //set elements for description and image
     const targ = document.querySelectorAll('.description');
     const targ2 = document.querySelectorAll('.hero');
@@ -90,9 +104,13 @@ function showSlides(n) {
     var i;
     var slides = document.getElementsByClassName("slide");
     //if the number is higher than the slides count, reset to beginning
-    if (n > slides.length) { slideIndex = 1 }
+    if (n > slides.length) {
+        slideIndex = 1;
+    }
     //opposite, send to end if it goes to 0/negative
-    if (n < 1) { slideIndex = slides.length }
+    if (n < 1) {
+        slideIndex = slides.length;
+    }
     //loop through and set everything to hidden
     for (i = 0; i < slides.length; i++) {
         slides[i].style.display = "none";
